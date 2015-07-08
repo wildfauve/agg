@@ -46,6 +46,11 @@ class EventManager
     CustomerPort.new.get_customer(url: url).party["party"]
   end
   
+  def port_event(event)
+    event_name = event["event"]
+    @event = Event.create_event(name: event_name, party_url: nil, event: event)            
+  end
+  
 =begin
   
 EVENTS
